@@ -13,10 +13,10 @@ const movieSchema = ({
         type: String,
         required: true,
       },
-      genre: {
+      genre: [{
         type: String,
         required: true,
-      },
+      }],
       releaseDate: {
         type: String,
         required: true,
