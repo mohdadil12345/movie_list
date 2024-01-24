@@ -38,6 +38,23 @@ movieRouter.get("/", async (req, res) => {
 
 
 
+// patch
+movieRouter.patch("/update/:movieID", async (req, res) => {
+    const { movieID } = req.params
+
+    try {
+
+        await movieModel.findByIdAndUpdate({ _id: movieID} ,  req.body)
+        res.status(200).send({ "msg": `The movieID with ID:${movieID} has been updated` })
+
+
+
+    } catch (err) {
+        res.status(400).send({ "error": message })
+    }
+
+})
+
 
 
 // delete
