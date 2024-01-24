@@ -1,5 +1,6 @@
 const express = require("express")
 const { movieModel } = require("../models/movie.model")
+const { auth } = require("../middleware/auth.middleware")
 const movieRouter = express.Router()
 
 
@@ -12,7 +13,7 @@ movieRouter.post("/add", async (req, res) => {
 
         const movie = new movieModel(req.body)
         await movie.save()
-        res.status(200).send({ "msg": movie })
+        res.status(200).send( movie )
         console.log(movie)
 
     } catch (error) {
@@ -21,14 +22,16 @@ movieRouter.post("/add", async (req, res) => {
 
 })
 
+// movieRouter.use(auth)
+
 
 // get
-movieRouter.get("/", async (req, res) => {
+movieRouter.get("/",async (req, res) => {
 
     try {
 
         const movie = await movieModel.find()
-        res.status(200).send({ "msg": movie })
+        res.status(200).send( movie )
 
     } catch (err) {
         res.status(400).send({ "error": err.message })
