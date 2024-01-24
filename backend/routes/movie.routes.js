@@ -45,7 +45,7 @@ movieRouter.get("/:id",async (req, res) => {
     const { id } = req.params
     try {
 
-        const movie = await movieModel.find({_id: id})
+        const movie = await movieModel.findOne({_id: id})
         res.status(200).send( movie )
 
     } catch (err) {
