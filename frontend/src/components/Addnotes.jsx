@@ -19,8 +19,8 @@ function Addnotes() {
     let bodyContent = JSON.stringify({
       title: title,
       image: image,
-      genre: "action , adventure , fantasy",
-      releaseDate: "1987-09-08",
+      genre: genre,
+      releaseDate: releaseDate,
       Rating: Rating,
       cast: [],
       plot: body,
