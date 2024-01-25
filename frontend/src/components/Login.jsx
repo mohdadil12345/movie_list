@@ -25,11 +25,16 @@ function LoginPage() {
        
        let bodyContent = JSON.stringify({
        
+          
            "email" : user.email,
-           "password" : user.password
-       });
+           "pass" : user.password
+          
+       }
        
-       let response = await fetch(`${hostapi}/users/login`, { 
+       
+          );
+       
+       let response = await fetch("https://movie-lists-x2e8.onrender.com/user/login", { 
          method: "POST",
          body: bodyContent,
          headers: headersList
@@ -37,13 +42,16 @@ function LoginPage() {
        
        let data = await response.json();
        console.log(data);
-
-       if(data.token){
-        localStorage.setItem("token", data.token)
-        alert("userlogeed in")
-       }else{
-        alert("wrong credntial")
-       }
+       if (data.token) {
+        localStorage.setItem("token", data.token);
+        alert('user loggged in')
+        window.location.href = "/"
+      }
+      else{
+        alert('wrong credentials')
+      }
+       
+   
          
     }
 
@@ -51,7 +59,7 @@ function LoginPage() {
     return (
         <div>
     
-      <form onSubmit={(e)=> form_submit(e)}>
+      <form className='signup_form' onSubmit={(e)=> form_submit(e)}>
         <input type="text"  placeholder='email' onChange={(e)=> setemail(e.target.value)}/>
         <input type="text"  placeholder='password' onChange={(e)=> setpassword(e.target.value)} />
     
@@ -64,3 +72,4 @@ function LoginPage() {
 }
 
 export default LoginPage
+

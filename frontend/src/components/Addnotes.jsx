@@ -48,7 +48,7 @@ function Addnotes() {
   return (
     <div>
       <h1>Add Movies</h1>
-      <form onSubmit={(e) => handleAddMovies(e)}>
+      <form className="signup_form" onSubmit={(e) => handleAddMovies(e)}>
         <input
           type="text"
           placeholder="title"

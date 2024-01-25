@@ -46,6 +46,10 @@ const form_submit = (e)=> {
      
      let data = await response.text();
      console.log(data);
+     if (data) {
+      alert('user registered successfull')
+      window.location.href = "/login"
+    }
      
   }
 
@@ -53,7 +57,7 @@ const form_submit = (e)=> {
   return (
     <div>
 
-  <form onSubmit={(e)=> form_submit(e)}>
+  <form className='signup_form' onSubmit={(e)=> form_submit(e)}>
     <input type="text" placeholder='name' onChange={(e)=> setusername(e.target.value)} />
     <input type="text"  placeholder='email' onChange={(e)=> setemail(e.target.value)}/>
     <input type="text"  placeholder='password' onChange={(e)=> setpassword(e.target.value)} />

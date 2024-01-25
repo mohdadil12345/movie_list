@@ -116,4 +116,30 @@
 
 }
 
+.signup_form{
+  display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 50px;
+    border-radius: 8px;
+    gap: 20px;
+    background:#023c6e;
+    color: white;
+    margin: 40px auto;
+
+    input{
+      padding: 10px;
+      border-radius: 4px;
+      border: none;
+    }
+    button{
+      padding: 10px;
+      border-radius: 4px;
+      border: none;
+      background-color: #034b89;
+      color: white;
+    }
+
+
+}
 
