@@ -26,7 +26,7 @@ movieRouter.post("/add", async (req, res) => {
 
 
 // get
-movieRouter.get("/", auth, async (req, res) => {
+movieRouter.get("/",  async (req, res) => {
 
     try {
 
