@@ -91,7 +91,7 @@ function Addnotes() {
           onChange={(e) => setgenre(e.target.value)}
           required
         />
-        <button type="submit">Add notes</button>
+        <button type="submit">Add movies</button>
       </form>
     </div>
   );
