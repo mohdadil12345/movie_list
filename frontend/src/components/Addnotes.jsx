@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const hostapi = "https://assignment-backened.onrender.com";
+const hostapi = "https://movie-lists-x2e8.onrender.com/movie";
 
 function Addnotes() {
   const [title, settitle] = useState("");
